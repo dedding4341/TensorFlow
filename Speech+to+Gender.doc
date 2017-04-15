@@ -1,0 +1,253 @@
+Message-ID: <862243985.102.1492142078269.JavaMail.cfmgr@cpliisu7.homedepot.com>
+Subject: Exported From Confluence
+MIME-Version: 1.0
+Content-Type: multipart/related; 
+	boundary="----=_Part_101_318334266.1492142078267"
+
+------=_Part_101_318334266.1492142078267
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+Content-Location: file:///C:/exported.html
+
+<html xmlns:o=3D'urn:schemas-microsoft-com:office:office'
+      xmlns:w=3D'urn:schemas-microsoft-com:office:word'
+      xmlns:v=3D'urn:schemas-microsoft-com:vml'
+      xmlns=3D'urn:w3-org-ns:HTML'>
+<head>
+    <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8=
+">
+    <title>Speech to Gender</title>
+    <!--[if gte mso 9]>
+    <xml>
+        <o:OfficeDocumentSettings>
+            <o:TargetScreenSize>1024x640</o:TargetScreenSize>
+            <o:PixelsPerInch>72</o:PixelsPerInch>
+            <o:AllowPNG/>
+        </o:OfficeDocumentSettings>
+        <w:WordDocument>
+            <w:View>Print</w:View>
+            <w:Zoom>90</w:Zoom>
+            <w:DoNotOptimizeForBrowser/>
+        </w:WordDocument>
+    </xml>
+    <![endif]-->
+    <style>
+                <!--
+        @page Section1 {
+            size: 8.5in 11.0in;
+            margin: 1.0in;
+            mso-header-margin: .5in;
+            mso-footer-margin: .5in;
+            mso-paper-source: 0;
+        }
+
+        td {
+            page-break-inside: avoid;
+        }
+
+        tr {
+            page-break-after: avoid;
+        }
+
+        div.Section1 {
+            page: Section1;
+        }
+
+        /* Confluence print stylesheet. Common to all themes for print medi=
+a */
+/* Full of !important until we improve batching for print CSS */
+
+#main {
+    padding-bottom: 1em !important; /* The default padding of 6em is too mu=
+ch for printouts */
+}
+
+body {
+    font-family: Arial, Helvetica, FreeSans, sans-serif;
+    font-size: 10pt;
+    line-height: 1.2;
+}
+
+body, #full-height-container, #main, #page, #content, .has-personal-sidebar=
+ #content {
+    background: #fff    !important;
+    color: #000         !important;
+    border: 0           !important;
+    width: 100%         !important;
+    height: auto        !important;
+    min-height: auto    !important;
+    margin: 0           !important;
+    padding: 0          !important;
+    display: block      !important;
+}
+
+a, a:link, a:visited, a:focus, a:hover, a:active {
+    color: #000;
+}
+#content h1,
+#content h2,
+#content h3,
+#content h4,
+#content h5,
+#content h6 {
+    font-family: Arial, Helvetica, FreeSans, sans-serif;
+    page-break-after: avoid;
+}
+pre {
+    font-family: Monaco, "Courier New", monospace;
+}
+
+#header,
+.aui-header-inner,
+#navigation,
+#sidebar,
+.sidebar,
+#personal-info-sidebar,
+.ia-fixed-sidebar,
+.page-actions,
+.navmenu,
+.ajs-menu-bar,
+.noprint,
+.inline-control-link,
+.inline-control-link a,
+a.show-labels-editor,
+.global-comment-actions,
+.comment-actions,
+.quick-comment-container,
+#addcomment {
+    display: none !important;
+}
+
+.comment .date::before {
+    content: none !important; /* remove middot for print view */
+}
+
+h1.pagetitle img {
+    height: auto;
+    width: auto;
+}
+
+.print-only {
+    display: block;
+}
+#footer {
+    position: relative !important; /* CONF-17506 Place the footer at end of=
+ the content */
+    margin: 0;
+    padding: 0;
+    background: none;
+    clear: both;
+}
+
+#poweredby {
+    border-top: none;
+    background: none;
+}
+
+#poweredby li.print-only {
+    display: list-item;
+    font-style: italic;
+}
+
+#poweredby li.noprint {
+    display:none;
+}
+
+
+/* no width controls in print */
+.wiki-content .table-wrap,
+.wiki-content p,
+.panel .codeContent,
+.panel .codeContent pre,
+.image-wrap {
+    overflow: visible !important;
+}
+
+/* TODO - should this work? */
+#children-section,
+#comments-section .comment,
+#comments-section .comment .comment-body,
+#comments-section .comment .comment-content,
+#comments-section .comment p {
+    page-break-inside: avoid;
+}
+
+#page-children a {
+    text-decoration: none;
+}
+
+/**
+ hide twixies
+
+ the specificity here is a hack because print styles
+ are getting loaded before the base styles. */
+#comments-section.pageSection .section-header,
+#comments-section.pageSection .section-title,
+#children-section.pageSection .section-header,
+#children-section.pageSection .section-title,
+.children-show-hide {
+    padding-left: 0;
+    margin-left: 0;
+}
+
+.children-show-hide.icon {
+    display: none;
+}
+
+/* personal sidebar */
+.has-personal-sidebar #content {
+    margin-right: 0px;
+}
+
+.has-personal-sidebar #content .pageSection {
+    margin-right: 0px;
+}
+-->
+    </style>
+</head>
+<body>
+    <h1>Speech to Gender</h1>
+    <div class=3D"Section1">
+        <h1 id=3D"SpeechtoGender-Background">Background</h1>
+<p>Being able to recognize words from audio data has an incredibly wide ran=
+ge of uses in any retail environment.&nbsp; From accepting audio queries on=
+ our website and mobile application to the possibility of having a robot th=
+at can guide customers through the store, a text-to-speech engine has high =
+business value<strong>. &nbsp;</strong>Since speech to text is a hard probl=
+em, we are presenting a simplified version of the problem. &nbsp;</p>
+<h2 id=3D"SpeechtoGender-ProblemDescription">Problem Description</h2>
+<p>Your task is to develop an algorithm that, given a raw audio file, will =
+decide if it is a man or a woman speaking. &nbsp;</p>
+<p>You will be provided with audio.tar.gz, an archive of .flac files and a =
+labels file called labels.txt, formatted like</p>
+<pre>&lt;filename&gt;|&lt;label&gt; </pre>
+<h2 id=3D"SpeechtoGender-Input">Input</h2>
+<p>The input to your model will be an archive of .flac files, called testin=
+g.tar.gz</p>
+<p><span style=3D"font-size: 20.0px;">Output</span></p>
+<p>The your model should output 'M' or 'F' based on the predicted gender of=
+ the speaker for each file it looks at. &nbsp;Please output these labels as=
+ a text file with one file per line in the following format:</p>
+<pre>&lt;filename&gt;|&lt;label&gt; </pre>
+<p>We cannot guarantee the behavior of the evaluator if filenames are dupli=
+cated. &nbsp;Retaining the same order of filenames is not required but it w=
+ill speed up the evaluator. &nbsp;Omitted file names will be considered inc=
+orrect.</p>
+<h2 id=3D"SpeechtoGender-Scoring">Scoring</h2>
+<p>You will be scored based on your accuracy at predicting gender on our te=
+st set.</p>
+<h2 id=3D"SpeechtoGender-PreprocessingHints">Preprocessing Hints</h2>
+<p>I used the <a href=3D"https://librosa.github.io/librosa/" class=3D"exter=
+nal-link" rel=3D"nofollow">librosa</a> package to vectorize files but there=
+ are other packages out there that also perform a similar functionality. &n=
+bsp;Feel free to experiment to find the best encoding of data.</p>
+<p>&nbsp;</p>
+<p><em>This speech dataset is licensed under the CC BY 4.0 License. &nbsp;T=
+he original data has been modified to prevent the possibility of cheating. =
+&nbsp;Due to the nature of this problem, we will make the original source a=
+nd full reference available upon request after the challenge is finished.</=
+em></p>
+    </div>
+</body>
+</html>
+------=_Part_101_318334266.1492142078267--
