@@ -3,6 +3,8 @@ import librosa
 import numpy as np
 import os
 
+batchNum = 0
+
 def spectralcentroid():
 	i = 0
 	array = []
@@ -18,4 +20,8 @@ def spectralcentroid():
 	return array
 
 
-# print(spectralcentroid())
+print(spectralcentroid())
+
+
+def next_batch(batch_size):
+	if batchNum * batch_size >= 8000:
