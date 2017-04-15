@@ -28,10 +28,10 @@ def spectralcentroid(batchSize):
 		while q < len(dat):
 			array[w, q] = dat[q]
 			q += 1
+			if (q == 500):
+				break
 		i += 1
 		w += 1
-		if (q == 500):
-			break
 		if (w == 5):
 			break
 	return array
