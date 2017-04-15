@@ -3,29 +3,32 @@ import librosa
 import numpy as np
 import os
 
-batchCounter = 0
+batchNum = 0
 data_num = 8000
 
 # parameter determines loop terminator which is batch_size * batchNum (e.g. 80)
-def spectralcentroid(batch_size):
-	i = 0
+def spectralcentroid(batchSize):
+	i = batchNum * batchSize
+	j = i
 	array = []
-	while i < batch_size:
+	while i < j + batchSize:
 		y, sr = librosa.load(os.path.dirname(os.path.realpath(__file__)) + '/training/' + str(i) + '.flac')
-		count = 0
-		total = 0
-		for x in np.nditer(librosa.feature.spectral_centroid(y=y, sr=sr)):
-			total += x
-			count += 1
-		array.append(total/count)
+		array.append(librosa.feature.spectral_centroid(y=y, sr=sr))
 		i += 1
 	return array
 
+print(spectralcentroid(5))
 
-print(spectralcentroid())
-
-
-def next_batch(batch_size):
+def read(batchSize):
+	stray = []
+	curr = batchNum*batchSize
+	with open(os.path.dirname(os.path.realpath(__file__)) + '/training/labels.txt') as f:
+		strings = f.readlines()
+	for s in strings:
+		stray.append(s.split('|')[1].rstrip())
+	return stray[curr:curr+batchSize]
+	
+def next_batch(batchSize):
 	#if batchNum * batch_size >= data_num:
 	batchCounter += 1
-	return (spectralcentroid(batch_size), ) # find way to get the output here as second parameter (use parsing ???)
+	return (spectralcentroid(batchSize), read(batchSize))
