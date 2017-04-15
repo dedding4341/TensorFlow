@@ -66,8 +66,8 @@ def train_neural_network(x):
 
         for epoch in range(hm_epochs):
             epoch_loss = 0
-            for _ in range(int(len(dataArray)/batch_size)):
-                epoch_x, epoch_y = dataArray.next #Lol it aint this easy :)
+            for _ in range(int(data_num/batch_size)):
+                epoch_x, epoch_y = next_batch(batch_size) #Lol it aint this easy :)
                 _, c = sess.run([optimizer, cost], feed_dict = {x: epoch_x, y: epoch_y})
                 epoch_loss += c
             print('Epoch ', epoch, ' completed out of ', hm_epochs, ' loss: ', epoch_loss)
