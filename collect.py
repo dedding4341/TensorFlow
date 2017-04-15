@@ -26,6 +26,6 @@ def read(batchSize):
 		stray.append(s.split('|')[1].rstrip())
 	return stray[curr:curr+batchSize]
 
-def next_batch(batchSize):
-	batchCounter += 1
+def next_batch(batchSize, batchNum):
+	batchNum += 1
 	return (spectralcentroid(batchSize), read(batchSize))
