@@ -12,12 +12,12 @@ import numpy as np
 
 
 #Setting up neural network
-n_nodes_hl1 = 10
-n_nodes_hl2 = 10
-n_nodes_hl3 = 10
+n_nodes_hl1 = 100
+n_nodes_hl2 = 150
+n_nodes_hl3 = 125
 
 n_classes = 2
-batch_size = 10 #setup batches, batches of 100 images, up this to compare more at one time
+batch_size = 80 #setup batches, batches of 100 images, up this to compare more at one time
 data_num = 8000
 
 #height x width
@@ -60,7 +60,7 @@ def train_neural_network(x):
     optimizer = tf.train.AdamOptimizer().minimize(cost)
 
     #Cycles feed forward +  back prop
-    hm_epochs = 10
+    hm_epochs = 2
 
     with tf.Session() as sess:
         sess.run(tf.initialize_all_variables())
