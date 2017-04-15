@@ -17,11 +17,12 @@ n_nodes_hl3 = 500
 
 n_classes = 2
 batch_size = 100 #setup batches, batches of 100 images, up this to compare more at one time
-dataArray = collect.spectralcentroid()
+xvalues = collect.spectralcentroid(batch_size)
+yvalues = collect.read(batch_size)
 
 #height x width
-x = tf.placeholder('float32', [None, dataArray])
-y = tf.placeholder('float32')
+x = tf.placeholder('float32', [None, xvalues])
+y = tf.placeholder('float32', yvalues)
 
 def neural_network_model(data):
     #input_data * weights + biases
