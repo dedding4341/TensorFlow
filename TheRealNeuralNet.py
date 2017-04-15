@@ -80,7 +80,7 @@ def train_neural_network(x):
             print('Epoch ', epoch, ' completed out of ', hm_epochs, ' loss: ', epoch_loss)
             correct = np.equal(np.argmax(predictnumpy,0), np.argmax(y,0))
             accuracy = tf.reduce_mean(tf.cast(correct, tf.float32))
-            print('Accuracy: ', accuracy.eval())
+            print('Accuracy: ', sess.run(accuracy.eval()))
 
 
 train_neural_network(x)

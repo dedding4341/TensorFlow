@@ -30,6 +30,8 @@ def spectralcentroid(batchSize):
 			q += 1
 		i += 1
 		w += 1
+		if (q == 500):
+			break
 		if (w == 5):
 			break
 	return array
