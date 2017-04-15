@@ -21,14 +21,14 @@ xvalues = collect.spectralcentroid(batch_size)
 yvalues = collect.read(batch_size)
 
 #height x width
-x = tf.placeholder('float32', [None, xvalues])
-y = tf.placeholder('float32', yvalues)
+x = tf.placeholder('float', xvalues)
+y = tf.placeholder('float', yvalues)
 
 def neural_network_model(data):
     #input_data * weights + biases
 
     #Biases exist to make the neural network a bit more dynamic
-    hidden_1_layer = {'weights' : tf.Variable(tf.random_normal([len(dataArray), n_nodes_hl1])),
+    hidden_1_layer = {'weights' : tf.Variable(tf.random_normal([data_num, n_nodes_hl1])),
                       'biases' : tf.Variable(tf.random_normal([n_nodes_hl1]))}
 
     hidden_2_layer = {'weights' : tf.Variable(tf.random_normal([n_nodes_hl1, n_nodes_hl2])),
@@ -74,7 +74,7 @@ def train_neural_network(x):
             print('Epoch ', epoch, ' completed out of ', hm_epochs, ' loss: ', epoch_loss)
         correct = tf.equal(tf.argmax(prediction,1), tf.argmax(y,1))
         accuracy = tf.reduce_mean(tf.cast(correct, 'float32'))
-        print('Accuracy: ', accuracy.eval({x:mnist.test.images, y:mnist.test.labels}))
+        print('Accuracy: ', accuracy.eval({x:xvalues, y:yvalues}))
 
 
 train_neural_network(x)
