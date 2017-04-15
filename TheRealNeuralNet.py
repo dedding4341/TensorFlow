@@ -61,6 +61,7 @@ def train_neural_network(x):
 
     #Cycles feed forward +  back prop
     hm_epochs = 2
+    saver = tf.train.Saver()
 
     with tf.Session() as sess:
         sess.run(tf.initialize_all_variables())
@@ -70,13 +71,14 @@ def train_neural_network(x):
             for _ in range(int(data_num/batch_size)):
                 epoch_x, epoch_y = collect.nextbatch(batch_size) #Lol it aint this easy :)
 
-                print('New batch beginning!nfnm,mnkmnkmnkmnmn mm mnkjhjhhgjhg')
+                print('New batch beginning!')
 
                 #print(np.shape(x), np.shape(y))
                 #print(len(np.array(epoch_x)))
                 #print(len(np.array(epoch_y)))
                 _, c, predictnumpy = sess.run([optimizer, cost, prediction], feed_dict = {x: np.array(epoch_x), y: np.array(epoch_y)})
                 epoch_loss += c
+                saver.save(sess, 'checkpoints/the-best.ckpt')
             print('Epoch ', epoch, ' completed out of ', hm_epochs, ' loss: ', epoch_loss)
             correct = np.equal(np.argmax(predictnumpy,0), np.argmax(y,0))
             accuracy = tf.reduce_mean(tf.cast(correct, tf.float32))
