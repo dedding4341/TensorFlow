@@ -20,7 +20,7 @@ batch_size = 100 #setup batches, batches of 100 images, up this to compare more 
 dataArray = collect.spectralcentroid()
 
 #height x width
-x = tf.placeholder('float32', dataArray)
+x = tf.placeholder('float32', [None, dataArray])
 y = tf.placeholder('float32')
 
 def neural_network_model(data):

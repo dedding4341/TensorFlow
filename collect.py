@@ -13,11 +13,9 @@ def spectralcentroid(batchSize):
 	array = []
 	while i < j + batchSize:
 		y, sr = librosa.load(os.path.dirname(os.path.realpath(__file__)) + '/training/' + str(i) + '.flac')
-		array.append(librosa.feature.spectral_centroid(y=y, sr=sr))
+		array.append(librosa.feature.spectral_centroid(y=y, sr=sr)[0])
 		i += 1
 	return array
-
-print(spectralcentroid(5))
 
 def read(batchSize):
 	stray = []
@@ -27,8 +25,7 @@ def read(batchSize):
 	for s in strings:
 		stray.append(s.split('|')[1].rstrip())
 	return stray[curr:curr+batchSize]
-	
+
 def next_batch(batchSize):
-	#if batchNum * batch_size >= data_num:
 	batchCounter += 1
 	return (spectralcentroid(batchSize), read(batchSize))
