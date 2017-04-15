@@ -11,24 +11,23 @@ import collect
 
 
 #Setting up neural network
-n_nodes_hl1 = 500
-n_nodes_hl2 = 500
-n_nodes_hl3 = 500
+n_nodes_hl1 = 10
+n_nodes_hl2 = 10
+n_nodes_hl3 = 10
 
 n_classes = 2
-batch_size = 100 #setup batches, batches of 100 images, up this to compare more at one time
-xvalues = collect.spectralcentroid(batch_size)
-yvalues = collect.read(batch_size)
+batch_size = 10 #setup batches, batches of 100 images, up this to compare more at one time
+data_num = 8000
 
 #height x width
-x = tf.placeholder('float', xvalues)
-y = tf.placeholder('float', yvalues)
+x = tf.placeholder(tf.float32, [batch_size, 500]) # don't know what the fixed width is
+y = tf.placeholder(tf.float32, [batch_size,2]) # temporary values
 
 def neural_network_model(data):
     #input_data * weights + biases
 
     #Biases exist to make the neural network a bit more dynamic
-    hidden_1_layer = {'weights' : tf.Variable(tf.random_normal([data_num, n_nodes_hl1])),
+    hidden_1_layer = {'weights' : tf.Variable(tf.random_normal([500, n_nodes_hl1])),
                       'biases' : tf.Variable(tf.random_normal([n_nodes_hl1]))}
 
     hidden_2_layer = {'weights' : tf.Variable(tf.random_normal([n_nodes_hl1, n_nodes_hl2])),
@@ -68,7 +67,8 @@ def train_neural_network(x):
         for epoch in range(hm_epochs):
             epoch_loss = 0
             for _ in range(int(data_num/batch_size)):
-                epoch_x, epoch_y = next_batch(batch_size) #Lol it aint this easy :)
+                epoch_x, epoch_y = collect.nextbatch(batch_size) #Lol it aint this easy :)
+                print('New batch beginning!nfnm,mnkmnkmnkmnmn mm mnkjhjhhgjhg')
                 _, c = sess.run([optimizer, cost], feed_dict = {x: epoch_x, y: epoch_y})
                 epoch_loss += c
             print('Epoch ', epoch, ' completed out of ', hm_epochs, ' loss: ', epoch_loss)
