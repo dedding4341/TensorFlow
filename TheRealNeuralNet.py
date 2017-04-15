@@ -1,5 +1,6 @@
 import tensorflow as tf
 import collect
+import numpy as np
 
 #from tensorflow.examples.tutorials.mnist import input_data
 
@@ -68,13 +69,18 @@ def train_neural_network(x):
             epoch_loss = 0
             for _ in range(int(data_num/batch_size)):
                 epoch_x, epoch_y = collect.nextbatch(batch_size) #Lol it aint this easy :)
+
                 print('New batch beginning!nfnm,mnkmnkmnkmnmn mm mnkjhjhhgjhg')
-                _, c = sess.run([optimizer, cost], feed_dict = {x: epoch_x, y: epoch_y})
+
+                #print(np.shape(x), np.shape(y))
+                #print(len(np.array(epoch_x)))
+                #print(len(np.array(epoch_y)))
+                _, c, predictnumpy = sess.run([optimizer, cost, prediction], feed_dict = {x: np.array(epoch_x), y: np.array(epoch_y)})
                 epoch_loss += c
             print('Epoch ', epoch, ' completed out of ', hm_epochs, ' loss: ', epoch_loss)
-        correct = tf.equal(tf.argmax(prediction,1), tf.argmax(y,1))
-        accuracy = tf.reduce_mean(tf.cast(correct, 'float32'))
-        print('Accuracy: ', accuracy.eval({x:xvalues, y:yvalues}))
+            correct = np.equal(np.argmax(predictnumpy,0), np.argmax(y,0))
+            accuracy = tf.reduce_mean(tf.cast(correct, tf.float32))
+            print('Accuracy: ', accuracy.eval())
 
 
 train_neural_network(x)
